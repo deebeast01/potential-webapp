@@ -11,7 +11,7 @@
         $admin = mysqli_query($conn, "SELECT * from tbl_admin where admin_username = '$username' and admin_password = '$password'");
         $numrow_admin = mysqli_num_rows($admin);
 
-        $employee = mysqli_query($conn, "SELECT * from tbl_employee where emp_username = '$username' and emp_password = '$password'");
+        $employee = mysqli_query($conn, "SELECT * from tbl_employee where emp_username ='$username'");
         $numrow_emp = mysqli_num_rows($employee);
 
 
@@ -23,21 +23,28 @@
                   $_SESSION['admin_id'] = $row['admin_id'];
                   $_SESSION['admin_username'] = $row['admin_username'];
                 }   
-                header('location:header.php?load=page1');
+                header('location:header.php?load=page3');
             }   
             
         elseif($numrow_emp > 0)
             {
                 while($row = mysqli_fetch_array($employee)){
-                  
-                  $_SESSION['role'] = $row['emp_name'];
-                  $_SESSION['emp'] = "Employee";
-                  $_SESSION['id'] = $row['emp_id'];
-                  $_SESSION['username'] = $row['emp_username'];
-                  $_SESSION['contact'] = $row['emp_contact'];
+                    $encpass = $row['emp_password']; //CHECK ENCRYPTED PASSWORD
 
+                        if(md5($password)==$encpass){ //COMPARE ENCRYPTED PASSWORD ON DB
+                           
+                            $_SESSION['role'] = $row['emp_name'];
+                            $_SESSION['emp'] = "Employee";
+                            $_SESSION['id'] = $row['emp_id'];
+                            $_SESSION['username'] = $row['emp_username'];
+                            $_SESSION['contact'] = $row['emp_contact'];
+                            header('location:header.php?load=page3');
+                        
+                        }else{
+                            header('location:login.php');
+                        }
                 }     
-                header ('location:header.php?load=page2');
+               
             }
 
     }
