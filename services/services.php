@@ -89,7 +89,7 @@
             <div class="cell">
                 <div class="cell-left">
                     <div class="divpic">
-
+                        <img src="../uploads/xray.jpg" alt="xray" width="100%" height="100%"> 
                     </div>
                 </div>
                 <div class="cell-right">
@@ -99,7 +99,7 @@
             <div class="cell">
                 <div class="cell-left">
                     <div class="divpic">
-
+                        <img src="../uploads/clinic.jpg" alt="clinic" width="100%" height="100%"> 
                     </div>
                 </div>
                 <div class="cell-right">
@@ -109,7 +109,7 @@
             <div class="cell">
                     <div class="cell-left">
                         <div class="divpic">
-
+                         <img src="../uploads/drugtest.png" alt="dtest" width="100%" height="100%"> 
                         </div>
                     </div>
                     <div class="cell-right">
@@ -119,7 +119,7 @@
             <div class="cell">
                     <div class="cell-left">
                                 <div class="divpic">
-
+                                <img src="../uploads/ecg.jpg" alt="ecg" width="100%" height="100%"> 
                                 </div>
                             </div>
                             <div class="cell-right">
@@ -131,7 +131,7 @@
             <div class="cell">
                     <div class="cell-left">
                                         <div class="divpic">
-
+                                        <img src="../uploads/audio.png" alt="audio" width="100%" height="100%"> 
                                         </div>
                                     </div>
                                     <div class="cell-right">
@@ -141,7 +141,7 @@
             <div class="cell">
                     <div class="cell-left">
                                         <div class="divpic">
-
+                                        <img src="../uploads/ults.png" alt="ultrasound" width="100%" height="100%"> 
                                         </div>
                                     </div>
                                     <div class="cell-right">
@@ -151,7 +151,7 @@
             <div class="cell">
                     <div class="cell-left">
                                             <div class="divpic">
-
+                                            <img src="../uploads/paps.png" alt="papsmear" width="100%" height="100%"> 
                                             </div>
                                         </div>
                                         <div class="cell-right">
@@ -161,7 +161,7 @@
             <div class="cell">
                      <div class="cell-left">
                                             <div class="divpic">
-
+                                            <img src="../uploads/hs.png" alt="House Call" width="100%" height="100%"> 
                                             </div>
                                         </div>
                                         <div class="cell-right">
