@@ -1,4 +1,4 @@
-<?php
+\<?php
     include 'config/config.php';
 
 
@@ -9,10 +9,13 @@
         $empcontact = $_POST['empcontact'];
         $empdept = $_POST['empdept'];
         $empuser = $_POST['empuser'];
-        $emppass = $_POST['emppass'];
+        $emppass = $_POST['emppass']; 
+        
+        //ENCRYPTION STARTS HERE -- 
+        $encryptedpass = md5($emppass);
 
         $sql = "INSERT INTO tbl_employee(emp_name,emp_address,emp_contact,emp_username,emp_password,emp_department)
-        VALUES('$empname','$empaddress','$empcontact','$empuser','$emppass','$empdept')";
+        VALUES('$empname','$empaddress','$empcontact','$empuser','$encryptedpass','$empdept')";
 
         $result = mysqli_query($conn,$sql) or die();
   
