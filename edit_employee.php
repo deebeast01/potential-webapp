@@ -82,9 +82,8 @@ use LDAP\Result;
         <label class="inf">Employee Department  : </label><br>
         <select class="infg" name="empdept" value="<?=$emp_department;?>">
             <option value="RECEPTIONIST">Receptionist</option>
-            <option value="SECURITY">Security</option>
-            <option value="TECHNICIAN">Technician</option>
-            <option value="OSP">Office Sales Person</option>
+            <option value="SECURITY">Medtech</option>
+            <option value="TECHNICIAN">Radtech</option>
             <option value="DOCTOR">Doctor</option>
         </select><br>
         <label class="inf">Employee Username  : </label><br>
