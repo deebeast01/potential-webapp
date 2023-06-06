@@ -123,23 +123,37 @@ cursor: pointer;
                                 <th>Employee Address</th>
                                 <th>Employee Contact</th>
                                 <th>Employee Department</th>
+                                <th>Employee Username</th>
+                                <th>Employee Password</th>
                                 <th></th>
                                 <th></th>
                         </tr>
                     <?php
                         if($result->num_rows >0){
-                            while($row = $result->fetch_assoc()){ ?>
+                            while($row = $result->fetch_assoc()){ 
+                                    $empNam = $row["emp_name"];
+                                    $empAdd = $row["emp_address"];
+                                    $empCon = $row["emp_contact"];
+                                    $empDep = $row["emp_department"];
+                                    $empUs = $row["emp_username"];
+                                    $passZ = $row["emp_password"];
+
+    
+                                ?>
                                 <tr>
-                                     <td><?= $row["emp_name"];?></td>
-                                     <td><?= $row["emp_address"];?></td>
-                                     <td><?= $row["emp_contact"];?></td>
-                                     <td><?= $row["emp_department"];?></td>
+                                     <td><?=$empNam;?></td>
+                                     <td><?=$empAdd;?></td>
+                                     <td><?=$empCon;?></td>
+                                     <td><?=$empDep;?></td>
+                                     <td><?=$empUs;?></td>
+                                     <td><?=$passZ;?></td>
                                      <td><button class="edit" onClick="document.location.href='edit_employee.php?edit=<?=$row['emp_id']?>'">Edit</button></td>
                                 <td><button class="delete" onClick="document.location.href='delete_employee.php?delete=<?=$row['emp_id']?>'">Delete</button></td>
                                 </tr>
 
                         <?php
                             }
+                            
                         }
                     ?>
             </table>
@@ -147,6 +161,8 @@ cursor: pointer;
 </div>
 
 <div id="myModal" class="modal">
+
+
 
             <!-- Modal content -->
             <div class="modal-content">
@@ -157,11 +173,11 @@ cursor: pointer;
                 <H1> ADD EMPLOYEE </H1>
     <form action="header.php?load=page5" method="POST">
         <label class="inf">Employee Name : </label><br>
-        <input class="infg" type="text" name="empname"/> <br>
+        <input class="infg" type="text" name="empname" required/> <br>
         <label class="inf">Employee Address : </label><br>
-        <input class="infg"type="text" name="empaddress"/><br>
+        <input class="infg"type="text" name="empaddress"required/><br>
         <label class="inf">Employee Contact # : </label><br>
-        <input class="infg" type="text" name="empcontact"/><br>
+        <input class="infg" type="text" name="empcontact"required/><br>
         <label class="inf">Designated Department : </label><br>
         <select class="infg" name="empdept">
             <option value="Receptionist">Receptionist</option>
@@ -186,7 +202,11 @@ cursor: pointer;
 
     </div>
 
-    <script>
+    
+
+
+
+<script>
     // Get the modal
 var modal = document.getElementById("myModal");
 
