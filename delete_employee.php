@@ -25,13 +25,19 @@
         $empcontact = $_POST['empcontact'];
         $empdepartment = $_POST['empdept'];
         $empuser = $_POST['empuser'];
-        $emppass = $_POST['emppass'];
+        $emppass = $_POST['emppass']; // START OF ENCRYPTION 
+            $ciphering = "AES-128-CBC";
+            $iv = openssl_cipher_iv_length($ciphering);
+            $options = 0; 
+            $encryption_key = "PAWER";
+            $encryption_iv = "1234567891011121";
+        $enc_pass = openssl_encrypt($emppass,$ciphering,$encryption_key,$options,$encryption_iv); // END OF ENCRYPTION
 
         $sql = "UPDATE tbl_employee set  emp_name='$empname',
                                          emp_address='$empaddress',
                                          emp_contact='$empcontact',
                                          emp_username='$empuser',
-                                         emp_password='$emppass',
+                                         emp_password='$enc_pass',
                                          emp_department='$empdepartment' WHERE emp_id = '$eid'
                                          ";
         
