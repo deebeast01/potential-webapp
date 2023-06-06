@@ -1,5 +1,5 @@
 <?php
-include"config/config.php";
+include "config/config.php";
 
 /* TRIGGER OF SESSION -- SET THE GET FUNCTION WITH 'load'  */
 session_start();
@@ -173,9 +173,9 @@ session_start();
                     if($_SESSION['role'] == "Administrator"){ ?>
                             <div class="nav">     
                                 <ul class="wow">
-                                    <li><a href="header.php?load=page1">Dashboard</a></li>
                                     <li><a href="header.php?load=page2">Employees</a></li>
                                     <li><a href="header.php?load=page3">Appointments</a></li>
+                                    <li><a href="header.php?load=page8">Reports</a></li>
                                     <li style="float:right;"><button class="logout" onClick="document.location.href='logout.php'">LOGOUT</button>
                                 </ul>
                                
@@ -186,6 +186,7 @@ session_start();
                             <div class="nav">     
                                 <ul class="wow">  
                                     <li><a href="header.php?load=page3">Appointments</a></li>
+                                    <li><a href="header.php?load=page8">Reports</a></li>
                                     <li style="float:right;"><button class="logout" onClick="document.location.href='logout.php'">LOGOUT</button>
                                 </ul>
                                
@@ -220,6 +221,10 @@ session_start();
 
                         case 'page7' : require_once 'pages/employee/profile.php';
                         break;
+
+                        case 'page8' : require_once 'pages/reports/reports.php';
+                        break;
+
                     }
             ?>
         </div>
