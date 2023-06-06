@@ -41,11 +41,11 @@
 </style>
 <?php
 
-    $result = mysqli_query($conn, "SELECT COUNT(emp_name) as total FROM tbl_employee");
+    /*$result = mysqli_query($conn, "SELECT COUNT(emp_name) as total FROM tbl_employee");
     $data = mysqli_fetch_assoc($result);
 
     $result1 = mysqli_query($conn, "SELECT COUNT(appointment_id) as total1 FROM tbl_appointment");
-    $data1 = mysqli_fetch_assoc($result1);
+    $data1 = mysqli_fetch_assoc($result1);*/
 ?>
 <div class = "title">
     
